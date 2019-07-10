@@ -26,7 +26,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/Values",
+					"raw": "http://localhost:5000/api/Values",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -60,7 +60,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/Values/{{id}}",
+					"raw": "http://localhost:5000/api/Values/{{id}}",
 					"protocol": "https",
 					"host": [
 						"localhost"
