@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "cd540c37-95c2-4220-9998-937ea38ae1f8",
+		"name": "testing-tech-talk-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-values-request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "acd04227-0b0e-4470-9e33-d57d53e5f882",
+						"exec": [
+							"pm.test(\"success status\", () => pm.response.to.be.success);\r",
+							"pm.test(\"value is correct\", () => \r",
+							"  pm.expect(pm.response.json()[0]).to.equal(\"value1\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5002/api/Values",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-value-request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "903798ec-7bbc-42e9-972a-5ab62c347333",
+						"exec": [
+							"pm.test(\"success status\", () => pm.response.to.be.success);\r",
+							"pm.test(\"value is correct\", () => \r",
+							"  pm.expect(pm.response.json()).to.equal(parseInt(pm.environment.get(\"id\"))));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5002/api/Values/{{id}}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Values",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
