@@ -26,12 +26,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/Values",
+					"raw": "https://{{base}}/api/Values",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"{{base}}"
 					],
-					"port": "5002",
 					"path": [
 						"api",
 						"Values"
@@ -60,12 +59,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/Values/{{id}}",
+					"raw": "https://{{base}}/api/Values/{{id}}",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"{{base}}"
 					],
-					"port": "5002",
 					"path": [
 						"api",
 						"Values",
