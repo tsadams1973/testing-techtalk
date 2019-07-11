@@ -11,6 +11,8 @@ namespace SeleniumTests
     [TestClass]
     public class Apptests
     {
+        const string _expectedVersionNumber = "ver. 1.1";
+
         [TestMethod]
         public void MatchVersionCode()
         {
@@ -22,7 +24,7 @@ namespace SeleniumTests
 
             //Open Chrome
             using (var chromeDriver = new ChromeDriver(browserDriverPath, options))
-            {
+            { 
                 //Assign google.com to variable named url
                 var url = "http://localhost:5000";
                 //Go to Google.com
@@ -32,10 +34,12 @@ namespace SeleniumTests
 
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("ver")));
 
+                var versionNum = chromeDriver.FindElementByName("ver").Text;
+
+                Assert.IsTrue(versionNum==_expectedVersionNumber);
+
                 chromeDriver.Close();
             }
-            
-            Assert.IsTrue(true);
         }
     }
 }
